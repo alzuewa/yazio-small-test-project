@@ -18,7 +18,7 @@ def test_pass_onboarding():
 
     app.onboarding_screen.set_height_units(Buttons.CM)
     app.onboarding_screen.set_activity_level(Choices.ActivityLevel.VERY_ACTIVE)
-    app.onboarding_screen.set_weight(weight=70)
+    app.onboarding_screen.set_weight(weight=65)
     app.onboarding_screen.set_diet(Choices.Diet.CLASSIC)
 
     app.onboarding_screen.set_destructor_bool(Choices.Choice.NO)

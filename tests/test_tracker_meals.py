@@ -12,7 +12,7 @@ def test_tracker_meals(open_home):
         app.meal_screen.confirm_button.click()
 
     with allure.step('Add product'):
-        app.meal_screen.add_product('White Rice, cooked')
+        app.meal_screen.add_product_on_position(position=2)
 
     with allure.step('Assert "Eaten" counter has increased'):
         assert app.home_screen.get_eaten_value() != 0

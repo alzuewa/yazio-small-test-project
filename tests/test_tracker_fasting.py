@@ -11,36 +11,40 @@ def test_tracker_fasting(open_home):
 
     with allure.step('Assert tracker is actually started'):
         app.fasting_screen.timer_view.should(be.visible)
-        app.fasting_screen.cycle_switch_button.should(have.text('END FASTING'))
-
-    with allure.step('Assert started fasting is shown in home screen'):
-        app.tabbar.open_home_screen()
-        app.home_screen.fasting_now_label.should(be.visible)
-
-    with allure.step('Switch tracker from fasting to eating'):
-        app.tabbar.open_fasting_screen()
-        app.fasting_screen.cycle_switch_button.click()
-
-    with allure.step('Assert confirmation popup is shown'):
-        app.fasting_screen.cycle_switch_popup.should(be.visible)
-        app.fasting_screen.popup_yes_button.click()
-
-    with allure.step('Assert button text has correctly changed'):
         app.fasting_screen.cycle_switch_button.should(have.text('START FASTING'))
 
-    with allure.step('Assert eating time is shown on the home screen'):
+    with allure.step('Assert started eating is shown in home screen'):
         app.tabbar.open_home_screen()
         app.home_screen.eating_now_label.should(be.visible)
 
-    with allure.step('Cancel tracker'):
+    with allure.step('Switch tracker from eating to fasting'):
+        app.tabbar.open_fasting_screen()
+        app.fasting_screen.switch_cycle()
+
+    with allure.step('Assert confirmation popup is shown'):
+        app.fasting_screen.cycle_switch_popup.should(be.visible)
+
+    with allure.step('Agree to stop fasting slot'):
+        app.fasting_screen.confirm_choice()
+
+    with allure.step('Assert button text has correctly changed'):
+        app.fasting_screen.cycle_switch_button.should(have.text('END FASTING'))
+
+    with allure.step('Assert fasting time is shown on the home screen'):
+        app.tabbar.open_home_screen()
+        app.home_screen.fasting_now_label.should(be.visible)
+
+    with allure.step('Cancelling fasting tracker completely'):
         app.tabbar.open_fasting_screen()
         app.fasting_screen.choose_free_tracker()
         app.fasting_screen.cancel_tracker_button.should(be.visible)
-        app.fasting_screen.cancel_tracker_button.click()
+        app.fasting_screen.cancel_fasting()
 
     with allure.step('Assert confirmation popup is shown'):
         app.fasting_screen.popup_title.should(have.text('Cancel Fast'))
-        app.fasting_screen.popup_yes_button.click()
+
+    with allure.step('Agree to cancel fasting'):
+        app.fasting_screen.confirm_choice()
 
     with allure.step('Assert action button changed its state'):
         app.fasting_screen.start_tracker_button.should(be.visible)

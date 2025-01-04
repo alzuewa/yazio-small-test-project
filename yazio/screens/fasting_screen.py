@@ -40,9 +40,6 @@ class FastingScreen():
     def switch_cycle(self):
         self.cycle_switch_button.click()
 
-    @allure.step('Stop fasting slot')
-    def end_fasting_slot(self):
-        self.popup_yes_button.click()
 
     @allure.step('Close tracker screen')
     def close_tracker_screen(self):
@@ -61,3 +58,11 @@ class FastingScreen():
     def start_free_tracker(self):
         self.choose_free_tracker()
         self.start_tracker()
+
+    @allure.step('Tap "Yes" on confirmation popup')
+    def confirm_choice(self):
+        self.popup_yes_button.click()
+
+    @allure.step('Tap "Cancel fasting"')
+    def cancel_fasting(self):
+        self.cancel_tracker_button.click()
