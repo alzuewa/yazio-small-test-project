@@ -1,9 +1,15 @@
 import allure
+from allure_commons.types import Severity
 from selene import be
 
 from yazio.screens.application import app
 
 
+@allure.epic('Favorite recipes')
+@allure.story('Add recipe to favorite')
+@allure.title('[Favorites] Add recipe')
+@allure.tag('Regression')
+@allure.severity(Severity.MINOR)
 def test_add_favorites_from_categories(open_home):
     with allure.step('Open recipes screen and check "Favorites" list'):
         app.tabbar.open_recipies_screen()

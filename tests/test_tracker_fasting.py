@@ -1,9 +1,15 @@
 import allure
+from allure_commons.types import Severity
 from selene import be, have
 
 from yazio.screens.application import app
 
 
+@allure.epic('Fasting')
+@allure.story('Start, stop, cancel fasting')
+@allure.title('[Fasting] 16/8')
+@allure.tag('Regression')
+@allure.severity(Severity.NORMAL)
 def test_tracker_fasting(open_home):
     with allure.step('Choose and start free fasting tracker'):
         app.tabbar.open_fasting_screen()

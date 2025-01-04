@@ -1,10 +1,16 @@
 import allure
+from allure_commons.types import Severity
 from selene import be
 
 from data.app_constants import OnboardingChoices as Choices, Buttons
 from yazio.screens.application import app
 
 
+@allure.epic('Onboarding')
+@allure.story('Pass onboarding')
+@allure.title('[Onboarding] Skip login')
+@allure.tag('Regression')
+@allure.severity(Severity.CRITICAL)
 def test_pass_onboarding():
     app.onboarding_screen.wait_for_onboarding_and_start()
     app.onboarding_screen.set_main_goal(Choices.MainGoal.SOMETHING_ELSE)

@@ -1,9 +1,15 @@
 import allure
+from allure_commons.types import Severity
 from selene import be
 
 from yazio.screens.application import app
 
 
+@allure.epic('Diary')
+@allure.story('Add records to diary')
+@allure.title('[Diary] Add meals from presets')
+@allure.tag('Regression')
+@allure.severity(Severity.CRITICAL)
 def test_tracker_meals(open_home):
     app.home_screen.open_luch_to_add()
 
