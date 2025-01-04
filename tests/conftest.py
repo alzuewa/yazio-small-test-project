@@ -60,6 +60,6 @@ def driver(request):
 
 @pytest.fixture(scope='function')
 def open_home(driver):
-    yield
-
     app.tabbar.open_home_screen()
+
+    yield
