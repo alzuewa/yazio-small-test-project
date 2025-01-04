@@ -45,8 +45,7 @@ and [Poetry](https://python-poetry.org/docs/#installation) installed.
 2. In project root create virtual environment and install dependencies
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv .venv && source .venv/bin/activate
 poetry install --no-root
 ```
 
