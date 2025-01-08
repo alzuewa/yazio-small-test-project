@@ -3,7 +3,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser
 
 
-class AddMealScreen():
+class AddMealScreen:
     def __init__(self):
         self.add_more_button = browser.element((AppiumBy.ID, 'com.yazio.android:id/addMore'))
 

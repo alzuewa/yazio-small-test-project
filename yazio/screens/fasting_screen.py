@@ -3,7 +3,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser
 
 
-class FastingScreen():
+class FastingScreen:
     def __init__(self):
         self.free_tracker_badge = browser.element((AppiumBy.ID, 'com.yazio.android:id/freeBadge'))
         self.free_tracker = browser.element(
@@ -39,7 +39,6 @@ class FastingScreen():
     @allure.step('Switching cycle')
     def switch_cycle(self):
         self.cycle_switch_button.click()
-
 
     @allure.step('Close tracker screen')
     def close_tracker_screen(self):

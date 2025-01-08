@@ -6,7 +6,7 @@ from .onboarding_screen import OnboardingScreen
 from .recipes_screen import RecipesScreen
 
 
-class Application():
+class Application:
     def __init__(self):
         self.onboarding_screen = OnboardingScreen()
         self.home_screen = HomeScreen()
