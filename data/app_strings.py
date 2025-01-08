@@ -21,7 +21,7 @@ class OnboardingChoices:
 
     class UsagePurpose(StrEnum):
         CALORIE_COUNT = 'Calorie Counting'
-        ACTIVITI_TRACK = 'Activity Tracking'
+        ACTIVITY_TRACK = 'Activity Tracking'
         EAT_HEALTHY = 'Healthy Eating'
         STATISTICS = 'Analyses & Statistics'
         FASTING = 'Intermittent Fasting'

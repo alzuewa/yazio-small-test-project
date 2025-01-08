@@ -4,7 +4,7 @@ import allure
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import be, browser
 
-from data.app_constants import Buttons
+from data.app_strings import Buttons
 from yazio.common_actions import find_element_by_text, click_element_with_text
 
 

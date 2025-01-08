@@ -2,7 +2,7 @@ import allure
 from allure_commons.types import Severity
 from selene import be
 
-from data.app_constants import OnboardingChoices as Choices, Buttons
+from data.app_strings import OnboardingChoices as Choices, Buttons
 from yazio.screens.application import app
 
 
@@ -17,7 +17,7 @@ def test_pass_onboarding():
     app.onboarding_screen.set_gender(Choices.Gender.FEMALE)
     app.onboarding_screen.set_secondary_goal(Choices.SecondaryGoal.BOOST_ENERGY)
 
-    app.onboarding_screen.set_usage_purpose(Choices.UsagePurpose.ACTIVITI_TRACK)
+    app.onboarding_screen.set_usage_purpose(Choices.UsagePurpose.ACTIVITY_TRACK)
     app.onboarding_screen.set_knowledge_level(Choices.KnowledgeLevel.ADVANCED)
     app.onboarding_screen.set_second_usage_purpose(Choices.Habits.HYDRATION)
     app.onboarding_screen.set_stoppers(Choices.Stopper.NO_TIME)
