@@ -9,7 +9,7 @@ from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from selene import browser
 
-import config
+from config import project_config
 from utils import attach
 from yazio.screens.application import app
 
@@ -22,7 +22,7 @@ def pytest_addoption(parser):
 def driver(request):
     context = request.config.getoption('--context')
 
-    options = UiAutomator2Options().load_capabilities(config.get_env(context))
+    options = UiAutomator2Options().load_capabilities(project_config.get_env(context))
     if context == 'bstack':
         options.set_capability(
             name='bstack:options',
@@ -40,7 +40,7 @@ def driver(request):
                                                  options=options
                                                  )
 
-    browser.config.timeout = float(config.DRIVER_TIMEOUT)
+    browser.config.timeout = float(project_config.DRIVER_TIMEOUT)
     browser.config._wait_decorator = selene.support._logging.wait_with(
         context=allure_commons._allure.StepContext
     )
